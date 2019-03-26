@@ -3,14 +3,12 @@
     <h1>Remote Jobs Board</h1>
     <div id="job_list">
       <draggable @start="drag=true" @end="drag=false">
-
       <div v-if='!job.legal' v-for="job in jobs" id="job-card" >
         <h3>{{job.position}}</h3>
         <h5>{{job.company}}</h5>
         <h5 v-if='!job.company'>Company unlisted</h5>
-
       </div>
-      </draggable>
+    </draggable>
     </div>
 
   </div>
@@ -24,7 +22,7 @@ export default {
   name: 'jobs-list',
   data(){
     return {
-      jobs: []
+      jobs: [],
     }
   },
   components: {
@@ -35,6 +33,7 @@ export default {
   },
   methods:{
     fetchJobs(){
+      // fetch('https://remoteok.io/api?ref=producthunt')
       fetch(" http://localhost:3000/jobs")
       .then(res => res.json())
       .then(res => this.jobs = res)
