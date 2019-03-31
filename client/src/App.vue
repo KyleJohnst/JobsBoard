@@ -8,6 +8,7 @@
 import JobList from './components/JobList.vue';
 
 
+
 export default {
   name: 'app',
   components: {
