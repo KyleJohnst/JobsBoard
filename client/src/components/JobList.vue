@@ -111,7 +111,7 @@ export default {
 #fav_tag{
   position: fixed;
 
-  right: 150px;
+  right: 20%;
 }
 
 </style>
