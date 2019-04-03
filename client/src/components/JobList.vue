@@ -14,10 +14,15 @@
     </div>
 
     <div class="column">
-      <h2>Favourites</h2>
+
+      <h2 id='fav_tag'>Favourites</h2>
       <draggable id="favs_list" :list="favourites" group="jobs" >
         <div id="job-card" v-for="(job, index) in favourites" :key="index">
+          <img v-if='job.company_logo' :src="job.company_logo" alt="company logo" id="logo">
           <h3>{{job.position}}</h3>
+          <div class="">
+            <input class="w3-btn w3-black" type="button" value="Button">
+          </div>
         </div>
       </draggable>
     </div>
@@ -64,8 +69,8 @@ export default {
 
 #job_list{
   display: -webkit-box;
-  max-width: 50%;
-  display: -webkit-box;
+  max-width: 100%;
+
 }
 #job-card{
   border: 1px solid black;
@@ -88,16 +93,25 @@ export default {
 }
 
 #favs_list{
-  width: 100%;
-  height: 500px;
-  border: 1px solid black;
+  width: 49%;
+  height: 100%;
+  position: fixed;
   display: -webkit-box;
   background-color: pink;
+  padding-bottom: 10px;
+  right: 10px;
+  margin-top: 55px;
 }
 
 #logo {
   height: 50px;
   width: 50px;
+}
+
+#fav_tag{
+  position: fixed;
+
+  right: 150px;
 }
 
 </style>
