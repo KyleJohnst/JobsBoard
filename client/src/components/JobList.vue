@@ -125,6 +125,7 @@ export default {
   background-color: #403c3d63;
   margin-left: 15%;
   margin-right: 15%;
+  margin-bottom: 10px;
 }
 
 #button {
