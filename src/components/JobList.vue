@@ -50,7 +50,7 @@ export default {
   },
   methods:{
     fetchJobs(){
-      fetch(" http://localhost:3000/jobs")
+      fetch("/jobs")
       .then(res => res.json())
       .then(res => this.jobs = res)
     },
