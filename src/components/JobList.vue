@@ -50,7 +50,7 @@ export default {
   },
   methods:{
     fetchJobs(){
-      fetch("/jobs")
+      fetch("https://remoteok.io/api?ref=producthunt")
       .then(res => res.json())
       .then(res => this.jobs = res)
     },
