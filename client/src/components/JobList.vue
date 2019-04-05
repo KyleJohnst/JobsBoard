@@ -108,7 +108,7 @@ export default {
   display: -webkit-box;
   background-color: #aba6a71c;
   padding-bottom: 10px;
-  right: 10px;
+  right: 20px;
   margin-top: 55px;
   overflow: scroll;
   border: 3px solid #a097978f;
