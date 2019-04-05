@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
+const serveStatic = require('serve-static');
 
 const cors = require("cors");
 
 app.use(cors())
 app.use(bodyParser.json());
+app.use(serveStatic(__dirname + "/dist"));
 
 app.get('/jobs', (req, res) => {
     const url = 'https://remoteok.io/api?ref=producthunt';
@@ -17,6 +19,6 @@ app.get('/jobs', (req, res) => {
 
 });
 
-app.listen(3000, function() {
-  console.log(`Stocks server running on port ${this.address().port}`);
+app.listen(process.env.Port || 3000, function() {
+  console.log(`jobs ${this.address().port}`);
 });
