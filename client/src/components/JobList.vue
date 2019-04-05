@@ -21,7 +21,7 @@
           <img v-if='job.company_logo' :src="job.company_logo" alt="company logo" id="logo">
           <h3>{{job.position}}</h3>
           <div class="">
-            <input class="w3-btn w3-black" type="button" value="Button">
+            <input class="w3-btn w3-black" type="button" value="Button" v-on:click="viewJob(job)">
           </div>
         </div>
       </draggable>
@@ -32,6 +32,7 @@
 
 <script>
 import draggable from 'vuedraggable';
+import {eventBus} from '../main.js';
 
 export default {
   name: 'jobs-list',
@@ -52,6 +53,9 @@ export default {
       fetch(" http://localhost:3000/jobs")
       .then(res => res.json())
       .then(res => this.jobs = res)
+    },
+    viewJob(job){
+      eventBus.$emit('job-selected', job)
     }
   }
 }
@@ -106,12 +110,13 @@ export default {
 #logo {
   height: 50px;
   width: 50px;
+  border-radius: 5px;
 }
 
 #fav_tag{
   position: fixed;
 
-  right: 20%;
+  right: 19%;
 }
 
 </style>

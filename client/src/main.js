@@ -4,6 +4,8 @@ import Vuedraggable from 'vuedraggable'
 
 Vue.config.productionTip = false
 
+export const eventBus = new Vue();
+
 Vue.use(Vuedraggable);
 
 new Vue({
