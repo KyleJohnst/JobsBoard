@@ -50,7 +50,7 @@ export default {
   },
   methods:{
     fetchJobs(){
-      fetch("https://remoteok.io/api?ref=producthunt")
+      fetch("https://remotejobboard.herokuapp.com/jobs")
       .then(res => res.json())
       .then(res => this.jobs = res)
     },
