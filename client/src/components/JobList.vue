@@ -93,7 +93,7 @@ export default {
   transition: 0.3s;
   list-style: none;
   background-color: #a2a19e85;
-  width: 50%;
+  width: 60%;
   /* height: 50%; */
 }
 
@@ -101,7 +101,7 @@ export default {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
 }
 
-#favs_list{
+/* #favs_list{
   width: 40%;
   height: 480px;
   position: fixed;
@@ -113,6 +113,18 @@ export default {
   overflow: scroll;
   border: 3px solid #a097978f;
   border-radius: 8px;
+} */
+
+#favs_list{
+  display: -webkit-box;
+  max-width: 100%;
+  height: 480px;
+  overflow: scroll;
+  border: 3px solid #a097978f;
+  border-radius: 8px;
+  background-color: #403c3d63;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 #button {
@@ -134,10 +146,10 @@ export default {
   border-radius: 5px;
 }
 
-#fav_tag{
+/* #fav_tag{
   position: fixed;
   right: 14%;
-}
+} */
 
 h1 {
   font-size: 30pt;
