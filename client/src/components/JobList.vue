@@ -1,8 +1,8 @@
 <template lang="html">
   <div id="container">
-    <h1>Remote Jobs Board</h1>
+    <h1 class="dashed-shadow">Remote Jobs Board</h1>
     <div class="column">
-      <h3>Jobs</h3>
+      <h2>Available Jobs</h2>
       <draggable :list="jobs" group="jobs" id="job_list">
         <div id="job-card" v-for="(job, index) in jobs" :key="index" v-if="!job.legal">
           <img v-if='job.company_logo' :src="job.company_logo" alt="company logo" id="logo">
@@ -21,7 +21,7 @@
           <img v-if='job.company_logo' :src="job.company_logo" alt="company logo" id="logo">
           <h3>{{job.position}}</h3>
           <div class="">
-            <input class="w3-btn w3-black" type="button" value="Button" v-on:click="viewJob(job)">
+            <input id="button" type="button" value="View Job" v-on:click="viewJob(job)">
           </div>
         </div>
       </draggable>
@@ -69,11 +69,14 @@ export default {
   float: left;
   width: 50%;
   text-align: center;
+  background: #ffffff00;
 }
 
 #job_list{
   display: -webkit-box;
   max-width: 100%;
+  height: 480px;
+  overflow: scroll;
 
 }
 #job-card{
@@ -89,7 +92,9 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   list-style: none;
-  background-color: orange;
+  background-color: #a2a19e85;
+  width: 50%;
+  /* height: 50%; */
 }
 
 #job-card:hover{
@@ -97,14 +102,30 @@ export default {
 }
 
 #favs_list{
-  width: 49%;
-  height: 100%;
+  width: 40%;
+  height: 480px;
   position: fixed;
   display: -webkit-box;
-  background-color: pink;
+  background-color: #aba6a71c;
   padding-bottom: 10px;
   right: 10px;
   margin-top: 55px;
+  overflow: scroll;
+  border: 3px solid #a097978f;
+  border-radius: 8px;
+}
+
+#button {
+  background-color: #bfbfbf;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: none;
+}
+
+#button:hover {
+  background-color: #83bd58b3;
+  color: white;
 }
 
 #logo {
@@ -115,8 +136,12 @@ export default {
 
 #fav_tag{
   position: fixed;
-
-  right: 19%;
+  right: 14%;
 }
+
+h1 {
+  font-size: 30pt;
+}
+
 
 </style>
