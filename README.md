@@ -4,7 +4,9 @@
 ## ToDo
 Create NoSQL DB to allow users to store favourite jobs.
 Optimize platform styles for other browsers.
-Add clear all favourites button.
+Add clear all favourites button.<br/>
+Add clear button X button for favourited jobs.<br/>
+Add search functionality using tags<br/>
 
 ## Project setup
 ```
@@ -16,7 +18,3 @@ npm install
 node server.js
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
